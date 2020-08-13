@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset='utf-8'>
+    <title>PDF出力</title>
+  </head>
+  <body>
+    <table id="table_id">
+      <thead>
+        <tr>
+          <th>参加者</th>
+          <th>出身</th>
+          <th>年齢</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in dataset %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
