@@ -39,23 +39,7 @@ class IndexDatatableView(BaseDatatableView):
                 )
         }
 
-    #def write_pdf_row(self, dataset):
-    #    for row in dataset:
-    #        html_string = render_to_string(
-    #                template_name='cms/row_template.html',
-    #                context={'row': row},
-    #                request=self.request)
-    #        r = HTML(string=html_string).write_pdf(
-    #                stylesheets=[CSS('cms/static/css/pdf.css')])
-    #        stream = io.BytesIO(r)
-    #        yield stream
-
     def create_pdf(self):
-        #d = self.get_dataset_for_pdf()
-        #i = self.write_pdf_row(d)
-        #return FileResponse(
-        #        i, as_attachment=True, filename='test.pdf')
-
         context = self.get_dataset_for_pdf()
         html_string = render_to_string(
                 template_name='cms/pdf_template.html',
